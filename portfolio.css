@@ -1,0 +1,60 @@
+/* Global variables. */
+:root {
+  /* Set sans-serif & mono fonts */
+  --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
+    "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica,
+    "Helvetica Neue", sans-serif;
+  --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  --standard-border-radius: 5px;
+
+  /* Default (light) theme */
+  --border: #898EA4;
+
+  --bg: #222429;
+  --accent-bg: #222429;
+  --text: #dcdcdc;
+  --text-light: #ababab;
+  --marked: #ffdd33;
+  --accent: #e79b5c;
+  --visited: #626F47;
+  --accent-hover: #F5ECD5;
+  --accent-text: var(--bg);
+  --code: #F5ECD5;
+  --date: #4fb694;
+  --info: #F0BB78;
+  --preformatted: #ccc;
+  --disabled: #111;
+
+  --titles: #67a4d6;
+
+  /* font-family: monospace; */
+  font-family: sans-serif;
+  font-size: 1rem;
+}
+
+h1 {
+    color: var(--text);
+}
+
+h2 {
+    color: var(--text);
+}
+
+h3 {
+    color: var(--text);
+}
+
+h4 {
+    color: var(--titles);
+}
+
+h5 {
+    color: var(--titles);
+}
+
+h6 {
+    color: var(--titles);
+}
+
+.badge-portfolio-primary { background-color: #2d5e56; }
+.badge-portfolio-secondary { background-color: #59676d; }
