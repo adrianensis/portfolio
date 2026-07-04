@@ -58,3 +58,13 @@ h6 {
 
 .badge-portfolio-primary { background-color: #2d5e56; }
 .badge-portfolio-secondary { background-color: #59676d; }
+
+@media print {
+    * {
+        font-size: 0.7rem !important;
+    }
+
+    .sidebar {
+        display: none !important;
+    }
+}
