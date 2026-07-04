@@ -973,7 +973,7 @@ sub {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    width: 100%;
+    width: 95%;
     height: auto;
     padding: 0.2em;
 }
