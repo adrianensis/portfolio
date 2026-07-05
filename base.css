@@ -1103,6 +1103,10 @@ sub {
   margin-right: 5px;
 }
 
+.badge:hover {
+  filter: saturate(200%) brightness(130%);
+}
+
 .badge-blue { background-color: #007bff; }
 .badge-cyan { background-color: #00eeff; }
 .badge-green { background-color: #28a745; }
