@@ -976,7 +976,7 @@ sub {
     text-decoration: none;
     width: 100%;
     height: auto;
-    padding: 0.2em;
+    padding: 0.5rem 0.2rem;
 }
 
 .card-link {
@@ -986,7 +986,7 @@ sub {
 
 .card-title {
     color: var(--text);
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: bold;
     margin-left: 0.5em;
     margin-top: 0.2em;
@@ -995,17 +995,21 @@ sub {
 
 .card-image-container {
     width: 10%;
+    min-width: 100px;
     height: auto;
-    aspect-ratio: 16/9;
+    /* aspect-ratio: 16/9; */
     overflow: hidden;
     flex-shrink: 0;
+
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
 }
 
 .card-image-container img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    height: auto;
+    object-fit: contain;
     display: block;
 }
 
@@ -1053,17 +1057,26 @@ sub {
 
 @media only screen and (max-width: 768px) {
   .card-container {
-    padding: 0.5em 0; /* Add a bit more vertical breathing room */
+    padding: 0.5rem 0; /* Add a bit more vertical breathing room */
   }
 
   .card-link {
     flex-direction: column; /* Stack image on top of text */
   }
 
+  .card-title {
+    font-size: 1.1rem;
+  }
+
   .card-image-container {
     width: 100%; /* Image takes full width of the card */
     aspect-ratio: 23/9;
     margin-bottom: 0.5rem;
+  }
+
+  .card-image-container img {
+    height: 100%;
+    object-fit: cover;
   }
 
   .card-content {
