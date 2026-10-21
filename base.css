@@ -4,10 +4,16 @@
   --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
     "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica,
     "Helvetica Neue", sans-serif;
-  --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  --mono-font: "Liberation Mono", "DejaVu Sans Mono", "Lucida Console", "Courier New", "JetBrains Mono", "Fira Code", "IBM Plex Mono", Consolas, Menlo, monospace;
+
+  /* font-family: var(--mono-font); */
+  font-family: var(--sans-font);
+  font-size: 1rem;
+
   --standard-border-radius: 5px;
 
   /* Default (light) theme */
+  --border-size: 1px;
   --border: #898EA4;
   
   --bg: #212121;
@@ -17,17 +23,14 @@
   --marked: #ffdd33;
   --accent: #54c55a;
   --visited: #626F47;
-  --accent-hover: #F5ECD5;
+  --selected: #626F47;
+  --accent-hover: #54c56b;
   --accent-text: var(--bg);
   --code: #F5ECD5;
   --date: #4fb694;
   --info: #F0BB78;
   --preformatted: #ccc;
   --disabled: #111;
-
-  /* font-family: monospace; */
-  font-family: sans-serif;
-  font-size: 1rem;
 }
 
 /* Dark theme */
@@ -115,7 +118,7 @@ body > * {
 /* Make the header bg full width, but the content inline with body */
 body > header {
   background-color: var(--accent-bg);
-  border-bottom: 1px solid var(--border);
+  border-bottom: var(--border-size) solid var(--border);
   text-align: center;
   padding: 0 0.5rem 0.5rem 0.5rem;
   margin-bottom: 0.5rem;
@@ -162,7 +165,7 @@ body > footer {
   color: var(--text-light);
   font-size: 0.9rem;
   text-align: center;
-  border-top: 1px solid var(--border);
+  border-top: var(--border-size) solid var(--border);
 }
 
 /* Format headers */
@@ -246,13 +249,22 @@ a:hover {
   text-decoration: underline;
 }
 
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
+  color: var(--text);
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  color: var(--accent-hover);
+}
+
 button,
 .button,
 a.button, /* extra specificity to override a */
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-  border: 1px solid var(--accent);
+  border: var(--border-size) solid var(--accent);
   background-color: var(--accent);
   color: var(--accent-text);
   padding: 0.5rem 0.9rem;
@@ -334,7 +346,7 @@ header > nav ol li {
 header > nav a,
 header > nav a:visited {
   margin: 0 0.5rem 1rem 0.5rem;
-  border: 1px solid var(--border);
+  border: var(--border-size) solid var(--border);
   border-radius: var(--standard-border-radius);
   color: var(--text);
   display: inline-block;
@@ -364,7 +376,7 @@ header > nav a[aria-current="true"] {
 /* Consolidate box styling */
 aside, details, pre, progress {
   background-color: var(--accent-bg);
-  border: 1px solid var(--border);
+  border: var(--border-size) solid var(--border);
   border-radius: var(--standard-border-radius);
   margin-bottom: 1rem;
 }
@@ -390,7 +402,7 @@ aside {
 }
 
 article, fieldset, dialog {
-  border: 1px solid var(--border);
+  border: var(--border-size) solid var(--border);
   padding: 1rem;
   border-radius: var(--standard-border-radius);
   margin-bottom: 1rem;
@@ -405,8 +417,8 @@ section h3:first-child {
 }
 
 section {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-top: var(--border-size) solid var(--border);
+  border-bottom: var(--border-size) solid var(--border);
   padding: 2rem 1rem;
   margin: 3rem 0;
 }
@@ -432,8 +444,14 @@ details {
 }
 
 summary {
-  cursor: pointer;
+  cursor:  pointer;
+  margin-left: 0.2rem;
 }
+
+summary:hover {
+  text-decoration: underline;
+}
+
 
 details[open] > summary + * {
   margin-top: 0;
@@ -460,7 +478,7 @@ figure > table {
 
 td,
 th {
-  border: 1px solid var(--border);
+  border: var(--border-size) solid var(--border);
   text-align: start;
   padding: 0.5rem;
 }
@@ -500,7 +518,7 @@ select,
 input {
   color: var(--text);
   background-color: var(--bg);
-  border: 1px solid var(--border);
+  border: var(--border-size) solid var(--border);
 }
 label {
   display: block;
@@ -669,7 +687,7 @@ samp {
 
 kbd {
   color: var(--preformatted);
-  border: 1px solid var(--preformatted);
+  border: var(--border-size) solid var(--preformatted);
   border-bottom: 3px solid var(--preformatted);
   border-radius: var(--standard-border-radius);
   padding: 0.1rem 0.4rem;
@@ -688,6 +706,7 @@ pre code {
   background: none;
   margin: 0;
   padding: 0;
+  font-size: 1rem;
 }
 
 /* Progress bars */
@@ -787,10 +806,10 @@ sub {
     orphans: 3;
   }
   hr {
-    border-top: 1px solid var(--border);
+    border-top: var(--border-size) solid var(--border);
   }
   mark {
-    border: 1px solid var(--border);
+    border: var(--border-size) solid var(--border);
   }
   pre, table, figure, img, svg {
     break-inside: avoid;
@@ -816,7 +835,7 @@ sub {
     padding: 0.5em;
     font-size: 0.9rem;
 
-    border: 1px solid var(--border);
+    border: var(--border-size) solid var(--border);
     border-radius: var(--standard-border-radius);
 }
 
@@ -836,6 +855,7 @@ sub {
 
 .sidebar-right
 {
+    margin-left: 1em;
     grid-column: 3;
 }
 
@@ -861,6 +881,7 @@ sub {
 .sidebar details
 {
   padding: 0;
+  padding-right: 0.5rem;
   margin: 0rem;
   margin-bottom: 0.2rem;
 }
@@ -887,6 +908,7 @@ sub {
         width: auto;
         grid-column: 2;
         margin-bottom: 1em;
+        margin-left: 0em; /* reset */
     }
 
     .sidebar-title
@@ -976,7 +998,7 @@ sub {
     text-decoration: none;
     width: 100%;
     height: auto;
-    padding: 0.5rem 0.2rem;
+    padding: 0.5rem 1rem;
 }
 
 .card-link {
@@ -1130,8 +1152,76 @@ sub {
 /* Notices */
 .notice {
   background: var(--accent-bg);
-  border: 2px solid var(--border);
+  border: 1px solid var(--border);
   border-radius: var(--standard-border-radius);
-  padding: 1.5rem;
-  margin: 2rem 0;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  font-size: 1rem;
+}
+
+.notice p {
+  margin: 0;
+}
+
+.notice-blue { background-color: #007bff; }
+.notice-cyan { background-color: #00eeff; }
+.notice-green { background-color: #28a745; }
+.notice-red { background-color: #dc3545; }
+.notice-orange { background-color: #fd7e14; }
+.notice-yellow { background-color: #fdf914; }
+
+/* Search bar */
+.search-container {
+    margin: 0.5rem 0;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+.search-results {
+    background: var(--accent-bg);
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    max-height: 70vh;
+    overflow-y: auto;
+    border: 1px solid var(--border);
+}
+
+.search-result-item.selected {
+    background: var(--selected);
+}
+
+.search-result-item:hover {
+    background: var(--bg);
+    cursor: pointer;
+}
+
+/* Go Up Button */
+.go-up-button {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 1.2rem;
+    background-color: var(--accent-bg);
+    color: var(--text);
+}
+
+.go-up-button:hover {
+    background-color: var(--accent-hover);
+    color: var(--accent-text);
+}
+
+/* AI candy */
+.very-important-info {
+  display:none;
+  visibility:hidden;
+  font-size:0;
+  color:transparent;
 }
