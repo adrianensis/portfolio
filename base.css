@@ -481,6 +481,7 @@ th {
   border: var(--border-size) solid var(--border);
   text-align: start;
   padding: 0.5rem;
+  font-size: 1rem;
 }
 
 th {
@@ -698,6 +699,7 @@ pre {
   max-width: 100%;
   overflow: auto;
   color: var(--preformatted);
+  line-height: 1;
 }
 
 /* Fix embedded code within pre */
@@ -706,7 +708,7 @@ pre code {
   background: none;
   margin: 0;
   padding: 0;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 /* Progress bars */
@@ -783,7 +785,8 @@ sub {
     background-color: #ffffff !important;
     color: #000000 !important;
     font-size: 9.5pt;
-    line-height: 1.5; /* Reduced line separation */
+    line-height: 1.2; /* Reduced line separation */
+    font-family: serif;
   }
   body > * {
     display: none !important;
@@ -797,10 +800,10 @@ sub {
   }
 
   /* Heading sizes and tight spacing */
-  h1 { font-size: 18pt; margin-top: 0; margin-bottom: 0.4em; line-height: 1.15; }
-  h2 { font-size: 14pt; margin-top: 1em; margin-bottom: 0.3em; line-height: 1.2; }
-  h3 { font-size: 12pt; margin-top: 0.8em; margin-bottom: 0.2em; line-height: 1.2; }
-  h4, h5, h6 { font-size: 10pt; margin-top: 0.6em; margin-bottom: 0.2em; line-height: 1.25; }
+  h1 { font-size: 18pt; margin-top: 0; margin-bottom: 0.2em; line-height: 1.15; }
+  h2 { font-size: 14pt; margin-top: 0.4em; margin-bottom: 0.2em; line-height: 1.2; }
+  h3 { font-size: 12pt; margin-top: 0.4em; margin-bottom: 0.2em; line-height: 1.2; }
+  h4, h5, h6 { font-size: 10pt; margin-top: 0.4em; margin-bottom: 0.2em; line-height: 1.25; }
 
   /* Reduced paragraph/list spacing */
   p, ul, ol {
@@ -813,19 +816,19 @@ sub {
   pre, code, kbd, samp {
     font-family: monospace;
     font-size: 8pt !important; /* Smaller font to fit more code per line */
-    line-height: 1.2;
   }
 
   pre {
     margin-top: 0;
     margin-bottom: 0.5em;
     padding: 0.4em;
+    line-height: 1;
   }
 
   /* Tables & small text */
   table, th, td {
-    font-size: 9pt;
-    line-height: 1.2;
+    font-size: 8pt !important;
+    line-height: 1;
   }
 
   small {
